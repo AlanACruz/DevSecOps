@@ -1,11 +1,9 @@
 #!/bin/bash
 
-# source ./fail.sh;
-# 
 # echo "Issue fail code before next run";
+# source ./fail.sh;
 # fail;
 
-source ./check_last_exit_code.sh;
-
 echo "Checking last exit code";
+source ../src/check_last_exit_code.sh;
 check_last_exit_code;
