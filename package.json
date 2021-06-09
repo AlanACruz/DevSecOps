@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "bats": "^0.4.2",
+    "bats-assert": "^2.0.0",
+    "bats-mock": "^1.0.1",
+    "bats-support": "^0.2.0"
+  }
+}

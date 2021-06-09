@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# Default
-last_exit_code_param=1
-
 # Set from param
-last_exit_code_param=$1
+exit_code_param=$1;
 
-echo "last_exit_code_param " $last_exit_code_param
+echo "exit_code_param " $exit_code_param;
 
-if [ $last_exit_code_param -eq 0 ] 
+if [ $exit_code_param -eq 0 ] 
 then
     # Success
     echo "Issue exit code: 0" >&2 ;
