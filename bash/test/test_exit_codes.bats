@@ -7,16 +7,12 @@
     local expected=1;
     local test_param=100;
 
-    # Using misspelled 'ls --helpa'
-    #ls --helpa >/dev/null;
-    #local test_param=$?
-
     # Then
     run ~/git/DevSecOps/bash/src/exit_codes.sh $test_param;
     local actual=${status};
 
     # Assert
-    [ ${actual} == ${expected} ];
+    [ ${actual} -eq ${expected} ];
 }
 
 # Success Test
@@ -26,14 +22,10 @@
     local expected=0;
     local test_param=0;
 
-    # Reseting exit code with 'ls -a'
-    #ls -a
-    #local test_param=$?
-
     # Then
     run ~/git/DevSecOps/bash/src/exit_codes.sh ${test_param};
     local actual=${status};
 
     # Assert
-    [ ${actual} == ${expected} ];
+    [ ${actual} -eq ${expected} ];
 }
