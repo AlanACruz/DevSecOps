@@ -36,4 +36,4 @@ jobs:
           echo "Mount Loc:         ${mount_loc}"
           \
           docker build --tag ${lowercase_tag} -f ${dockerfile} .
-          docker run -v "${git_runner_code_loc}:${mount_loc}" -i -t "${lowercase_tag}"
+          docker run -i -t "${lowercase_tag}"
