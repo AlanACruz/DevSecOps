@@ -1,7 +1,19 @@
 name: Bats-Tests
-on: [push, pull_request, workflow_dispatch]
-description: 'Run Bats Tests'
 
-runs:
-  using: 'docker'
-  image: 'bash/test/bats-dockerfile'
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+
+  bats-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run test
+        run: |
+          git_workflow=$GITHUB_WORKFLOW
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          git_branch=${GITHUB_REF#refs/heads/}
+          whoami
+          pwd
+          docker build --tag "$git_workflow/$git_branch/$git_hash" ~/DevSecOps/bash/test/bats-dockerfile
+          docker run -it "$git_workflow/$git_branch/$git_hash" --version
