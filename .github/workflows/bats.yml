@@ -17,5 +17,6 @@ jobs:
           lowercase_tag=$raw_tag | tr [:upper:] [:lower:]
           whoami
           pwd
+          ls
           docker build --tag "lowercase_tag" /home/runner/DevSecOps/DevSecOps/bash/test/bats-dockerfile
           docker run -it "lowercase_tag" --version
