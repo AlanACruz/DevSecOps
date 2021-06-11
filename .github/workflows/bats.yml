@@ -26,7 +26,7 @@ jobs:
           lowercase_tag=$(echo "${raw_tag}" | tr '[:upper:]' '[:lower:]')
           echo "Lowercase Tag:     ${lowercase_tag}"
           \
-          dockerfile="/home/runner/work/DevSecOps/DevSecOps/docker/bats.github.Dockerfile"
+          dockerfile="/home/runner/work/DevSecOps/DevSecOps/docker/bats.Dockerfile"
           echo "Dockerfile:        ${dockerfile}"
           \
           volumn_loc="~/git/DevSecOps"
