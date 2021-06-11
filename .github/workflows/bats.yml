@@ -35,7 +35,14 @@ jobs:
           mount_loc="/root/git/DevSecOps"
           echo "Mount Loc:         ${mount_loc}"
           \
-          ls -al /home/runner/work/DevSecOps
+          echo "Who am I?"
+          whoami
+          \
+          echo "Current Directory:"
+          pwd
+          \
+          echo "List ${git_runner_code_loc}"
+          ls -al ${git_runner_code_loc}
           \
           docker build --tag ${lowercase_tag} -f ${dockerfile} .
           docker run -i -t "${lowercase_tag}"
