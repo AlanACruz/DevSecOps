@@ -5,4 +5,4 @@ FROM bats/bats:1.2.1
 ADD . /root/git/DevSecOps
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["~/git/DevSecOps/docker/bats.Entrypoint"]
+ENTRYPOINT ["/root/git/DevSecOps/docker/bats.Entrypoint"]
