@@ -1,12 +1,23 @@
 #!/bin/sh -l
 
+working_directory="~/git/DevSecOps"
+
+echo "Who am I?"
 whoami
 
+echo "Current Directory:"
 pwd
-ls -al
 
-cd ~
+echo "List Files"
+ls -al 
+
+echo "Changing to ${working_directory}"
+cd ~/git/DevSecOps
+
+echo "Current Directory:"
 pwd
+
+echo "List Files"
 ls -al
 
 bats ~/git/DevSecOps/bash/test
