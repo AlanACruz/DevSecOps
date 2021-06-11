@@ -2,7 +2,7 @@
 FROM bats/bats:1.2.1
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
-COPY . /code/DevSecOps
+COPY . ~/git/DevSecOps
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/code/DevSecOps/bats.entrypoint.sh"]
+ENTRYPOINT ["~/git/DevSecOps/bats.entrypoint.sh"]
