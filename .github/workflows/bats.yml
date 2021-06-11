@@ -22,5 +22,5 @@ jobs:
           volumn_loc="~/git/DevSecOps"
           mount_loc=""
           \
-          docker build -v "$volumn_loc:/root/git/DevSecOps" --tag "$lowercase_tag" -f $dockerfile .
-          docker run -it "$lowercase_tag" --version
+          docker build --tag "$lowercase_tag" -f $dockerfile .
+          docker run -v "$volumn_loc:/root/git/DevSecOps" -it "$lowercase_tag" --version
