@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run test
+        shell: 'script -q -e -c "bash {0}"' # work around tty issues
         run: |
           git_workflow=$GITHUB_WORKFLOW
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
