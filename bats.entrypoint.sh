@@ -4,4 +4,4 @@ whoami
 pwd
 ls -al
 
-bats /code/DevSecOps/bash/test
+bats ~/git/DevSecOps/bash/test
