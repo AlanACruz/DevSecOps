@@ -20,7 +20,7 @@ jobs:
           dockerfile="/home/runner/work/DevSecOps/DevSecOps/bats.github.Dockerfile"
           \
           volumn_loc="~/git/DevSecOps"
-          mount_loc=""
+          mount_loc="/root/git/DevSecOps"
           \
-          docker build --tag -f $dockerfile .
-          docker run -v "$volumn_loc:/root/git/DevSecOps" -it "$lowercase_tag" --version
+          docker build --tag ${lowercase_tag} -f ${dockerfile} .
+          docker run -v "${volumn_loc}:${mount_loc}" -it "${lowercase_tag}" --version
