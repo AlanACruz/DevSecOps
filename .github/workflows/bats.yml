@@ -17,7 +17,7 @@ jobs:
           \
           raw_tag=$git_workflow/$git_branch/$git_hash
           lowercase_tag=$raw_tag | tr [:upper:] [:lower:]
-          dockerfile="/home/runner/work/DevSecOps/DevSecOps/bash/test/bats.github.Dockerfile"
+          dockerfile="/home/runner/work/DevSecOps/DevSecOps/bats.github.Dockerfile"
           \
           docker build --tag "lowercase_tag" -f $dockerfile .
           docker run -it "lowercase_tag" --version
