@@ -17,5 +17,5 @@ npm install \
    bats-mock \
    bats-assert \
    
-~/git/DevSecOps/node_modules/bats/libexec/bats --tap ~/git/DevSecOps/bash/test
+~/git/DevSecOps/node_modules/bats/libexec/bats ~/git/DevSecOps/bash/test
 ```
