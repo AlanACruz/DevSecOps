@@ -13,13 +13,9 @@ sudo apt-get install -y nodejs
 npm install \
    --save \
    bats \
-   bats-assert \
+   bats-support \
    bats-mock \
-   bats-support
-
-npm starts
-
-npm test
-
-npm stop
+   bats-assert \
+   
+~/git/DevSecOps/node_modules/bats/libexec/bats --tap ~/git/DevSecOps/bash/test
 ```
