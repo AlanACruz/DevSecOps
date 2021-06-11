@@ -12,18 +12,18 @@
     #local test_param=$?
 
     # Then
-    run ~/git/DevSecOps/bash/src/exit_codes.sh $test_param
-    local actual=$status;
+    run ~/git/DevSecOps/bash/src/exit_codes.sh $test_param;
+    local actual=${status};
 
     # Assert
-    [ $actual -eq $expected ]
+    [ ${actual} -eq ${expected} ];
 }
 
 # Success Test
 @test 'exit_code_success()' {
 
     # Given
-    local expected=0
+    local expected=0;
     local test_param=0;
 
     # Reseting exit code with 'ls -a'
@@ -31,9 +31,9 @@
     #local test_param=$?
 
     # Then
-    run ~/git/DevSecOps/bash/src/exit_codes.sh $test_param
-    local actual=$?;
+    run ~/git/DevSecOps/bash/src/exit_codes.sh ${test_param};
+    local actual=${?};
 
     # Assert
-    [ $actual -eq $expected ]
+    [ ${actual} -eq ${expected} ];
 }
