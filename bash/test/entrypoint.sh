@@ -1,7 +1,7 @@
 #!/bin/sh -l
 
-bats ~/git/DevSecOps/bash/test
+whoami
+pwd
+ls
 
-echo "Hello $1"
-time=$(date)
-echo "::set-output name=time::$time"
+bats ~/git/DevSecOps/bash/test
