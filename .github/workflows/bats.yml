@@ -23,4 +23,4 @@ jobs:
           mount_loc="/root/git/DevSecOps"
           \
           docker build --tag ${lowercase_tag} -f ${dockerfile} .
-          docker run -v "${volumn_loc}:${mount_loc}" -it "${lowercase_tag}" --version
+          docker run -v "${volumn_loc}:${mount_loc}" -i -t "${lowercase_tag}"
