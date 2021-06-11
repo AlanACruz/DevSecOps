@@ -7,4 +7,4 @@ FROM bats/bats:1.2.1
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
 # ENTRYPOINT ["~/git/DevSecOps/docker/bats.Entrypoin"]
 
-CMD [ "ls", "-al", "~" ]
+ENTRYPOINT [ "ls -al ~" ]
