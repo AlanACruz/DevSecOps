@@ -13,7 +13,9 @@ jobs:
           git_workflow=$GITHUB_WORKFLOW
           git_hash=$(git rev-parse --short "$GITHUB_SHA")
           git_branch=${GITHUB_REF#refs/heads/}
+          raw_tag=$git_workflow/$git_branch/$git_hash
+          lowercase_tag=tr [:upper:] [:lower:] $raw_tag
           whoami
           pwd
-          docker build --tag "$git_workflow/$git_branch/$git_hash" ~/DevSecOps/bash/test/bats-dockerfile
-          docker run -it "$git_workflow/$git_branch/$git_hash" --version
+          docker build --tag "lowercase_tag" ~/DevSecOps/bash/test/bats-dockerfile
+          docker run -it "lowercase_tag" --version
