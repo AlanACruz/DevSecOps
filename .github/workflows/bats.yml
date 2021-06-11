@@ -12,15 +12,28 @@ jobs:
         shell: 'script -q -e -c "bash {0}"' # work around tty issues
         run: |
           git_workflow=$GITHUB_WORKFLOW
-          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          echo "Git Workflow:      ${git_workflow}"
+          \
           git_branch=${GITHUB_REF#refs/heads/}
+          echo "Git Branch:        ${git_branch}"
+          \
+          git_hash=$(git rev-parse --short "$GITHUB_SHA")
+          echo "Git Hash:          ${git_hash}"
           \
           raw_tag="${git_workflow}/${git_branch}:${git_hash}"
+          echo "Raw Tag:           ${raw_tag}"
+          \
           lowercase_tag=$raw_tag | tr [:upper:] [:lower:]
-          dockerfile="/home/runner/work/DevSecOps/DevSecOps/bats.github.Dockerfile"
+          echo "Lowercase Tag:     ${lowercase_tag}"
+          \
+          dockerfile="/home/runner/work/DevSecOps/DevSecOps/docker/bats.github.Dockerfile"
+          echo "Dockerfile:        ${dockerfile}"
           \
           volumn_loc="~/git/DevSecOps"
+          echo "Volumn Loc:        ${volumn_loc}"
+          \
           mount_loc="/root/git/DevSecOps"
+          echo "Mount Loc:         ${mount_loc}"
           \
           docker build --tag ${lowercase_tag} -f ${dockerfile} .
           docker run -v "${volumn_loc}:${mount_loc}" -i -t "${lowercase_tag}"
