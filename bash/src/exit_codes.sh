@@ -3,7 +3,7 @@
 # Set from param
 exit_code_param=$1;
 
-echo "exit_code_param " $exit_code_param;
+echo "Sexit_code_param " $exit_code_param;
 
 if [ $exit_code_param -eq 0 ] 
 then

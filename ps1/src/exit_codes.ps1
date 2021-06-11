@@ -19,7 +19,7 @@ Function check_last_exit_code () {
     # Get last exit code via $?
     $local:last_exit_code =$ ?;
     Write-Host "Last exit code was: " $last_exit_code;
-    return last_exit_code;
+    return $last_exit_code;
 }
 
 Function redirect_last_exit_code () {
