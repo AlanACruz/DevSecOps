@@ -26,14 +26,14 @@ jobs:
           lowercase_tag=$(echo "${raw_tag}" | tr '[:upper:]' '[:lower:]')
           echo "Lowercase Tag:     ${lowercase_tag}"
           \
-          dockerfile="/home/runner/work/DevSecOps/DevSecOps/docker/bats.Dockerfile"
-          echo "Dockerfile:        ${dockerfile}"
+          git_runner_code_loc="/home/runner/work/DevSecOps/DevSecOps"
+          echo "Volumn Loc:        ${git_runner_code_loc}"
           \
-          volumn_loc="~/git/DevSecOps"
-          echo "Volumn Loc:        ${volumn_loc}"
+          dockerfile="${git_runner_code_loc}/docker/bats.Dockerfile"
+          echo "Dockerfile:        ${dockerfile}"
           \
           mount_loc="/root/git/DevSecOps"
           echo "Mount Loc:         ${mount_loc}"
           \
           docker build --tag ${lowercase_tag} -f ${dockerfile} .
-          docker run -v "${volumn_loc}:${mount_loc}" -i -t "${lowercase_tag}"
+          docker run -v "${git_runner_code_loc}:${mount_loc}" -i -t "${lowercase_tag}"
