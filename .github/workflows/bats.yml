@@ -23,7 +23,7 @@ jobs:
           raw_tag="${git_workflow}/${git_branch}:${git_hash}"
           echo "Raw Tag:           ${raw_tag}"
           \
-          lowercase_tag=$raw_tag | tr [:upper:] [:lower:]
+          lowercase_tag=$(echo "${raw_tag}" | tr '[:upper:]' '[:lower:]')
           echo "Lowercase Tag:     ${lowercase_tag}"
           \
           dockerfile="/home/runner/work/DevSecOps/DevSecOps/docker/bats.github.Dockerfile"
