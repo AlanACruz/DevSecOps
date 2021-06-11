@@ -16,7 +16,7 @@
     local actual=${status};
 
     # Assert
-    [ ${actual} -eq ${expected} ];
+    [ ${actual} == ${expected} ];
 }
 
 # Success Test
@@ -32,8 +32,8 @@
 
     # Then
     run ~/git/DevSecOps/bash/src/exit_codes.sh ${test_param};
-    local actual=${?};
+    local actual=${status};
 
     # Assert
-    [ ${actual} -eq ${expected} ];
+    [ ${actual} == ${expected} ];
 }
