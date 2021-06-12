@@ -1,9 +1,3 @@
-#FROM bats/bats:1.2.1
-
-#ADD . /root/git/DevSecOps
-
-#ENTRYPOINT ["/root/git/DevSecOps/docker/bats.Entrypoint"]
-
 FROM ubuntu:latest
 
 RUN apt-get update; \
