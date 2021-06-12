@@ -1,8 +1,11 @@
-# Container image that runs your code
-FROM bats/bats:1.2.1
+FROM ubuntu:latest
 
-# Copies your code file from your action repository to the filesystem path `/` of the container
+RUN apt-get update; \
+    apt-get install -y curl; \
+    curl -fsSL https://deb.nodesource.com/setup_16.x | bash -; \
+    apt-get install -y nodejs; \
+    npm install -g bats;
+
 ADD . /root/git/DevSecOps
 
-# Code file to execute when the docker container starts up (`entrypoint.sh`)
 ENTRYPOINT ["/root/git/DevSecOps/docker/bats.Entrypoint"]
