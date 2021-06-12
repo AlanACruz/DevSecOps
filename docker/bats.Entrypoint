@@ -1,22 +1,20 @@
 #!/bin/sh -l
 
-working_directory="~/git/DevSecOps"
-
-${working_directory}/bash/src/standard_header.sh "Who am I?"
+~/git/DevSecOps/bash/src/standard_header "Who am I?"
 whoami
 
-${working_directory}/bash/src/standard_header.sh "Current Directory:"
+~/git/DevSecOps/bash/src/standard_header.sh "Current Directory:"
 pwd
 
-${working_directory}/bash/src/standard_header.sh "Listing Files:"
+~/git/DevSecOps/bash/src/standard_header.sh "Listing Files:"
 ls -al 
 
-${working_directory}/bash/src/standard_header.sh "Changing to: ${working_directory}"
+~/git/DevSecOps/bash/src/standard_header.sh "Changing to: ~/git/DevSecOps"
 cd ~/git/DevSecOps
 pwd
 
-${working_directory}/bash/src/standard_header.sh "Listing Files:"
+~/git/DevSecOps/bash/src/standard_header.sh "Listing Files:"
 ls -al
 
-${working_directory}/bash/src/standard_header.sh "Starting Tests:"
+~/git/DevSecOps/bash/src/standard_header.sh "Starting Tests:"
 bats ~/git/DevSecOps/bash/test
