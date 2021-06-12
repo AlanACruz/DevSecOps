@@ -38,9 +38,9 @@ sudo usermod -aG docker $USER
 sudo chmod 666 /var/run/docker.sock
 ```
 
-# Pull Bats image
+# Pull Ubuntu image
 ```
-docker pull bats/bats:1.2.1
+docker pull ubuntu:latest
 ```
 
 # Run Maven build from container
@@ -55,6 +55,7 @@ docker run -i -t "bats-test"
 # Run Bats tests locally
 ```
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
+
 sudo apt-get install -y nodejs
 
 npm install -g bats
