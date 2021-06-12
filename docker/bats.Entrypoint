@@ -1,6 +1,6 @@
 #!/bin/sh -l
 
-~/git/DevSecOps/bash/src/standard_header "Who am I?"
+~/git/DevSecOps/bash/src/standard_header.sh "Who am I?"
 whoami
 
 ~/git/DevSecOps/bash/src/standard_header.sh "Current Directory:"
