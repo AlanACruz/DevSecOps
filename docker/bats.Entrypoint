@@ -2,22 +2,21 @@
 
 working_directory="~/git/DevSecOps"
 
-echo "Who am I?"
+${working_directory}/bash/src/standard_header.sh "Who am I?"
 whoami
 
-echo "Current Directory:"
+${working_directory}/bash/src/standard_header.sh "Current Directory:"
 pwd
 
-echo "List Files"
+${working_directory}/bash/src/standard_header.sh "Listing Files:"
 ls -al 
 
-echo "Changing to ${working_directory}"
+${working_directory}/bash/src/standard_header.sh "Changing to: ${working_directory}"
 cd ~/git/DevSecOps
-
-echo "Current Directory:"
 pwd
 
-echo "List Files"
+${working_directory}/bash/src/standard_header.sh "Listing Files:"
 ls -al
 
+${working_directory}/bash/src/standard_header.sh "Starting Tests:"
 bats ~/git/DevSecOps/bash/test
