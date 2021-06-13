@@ -4,7 +4,7 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
 
-  bats-test:
+  Pester-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
