@@ -21,3 +21,10 @@ Describe 'Get-Planet' {
         $allPlanets.Count | Should -Be 8
     }
 }
+
+Describe 'Get-Planet-Fail' {
+    It 'Given no parameters, it lists all 8 planets' {
+        $allPlanets = Get-Planet
+        $allPlanets.Count | Should -Be 0
+    }
+}
