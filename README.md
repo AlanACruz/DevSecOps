@@ -1,11 +1,11 @@
 # DevSecOps
 
-# git clone
+## git clone
 ```
 git clone git@github.com:AlanACruz/DevSecOps.git ~/git/
 ```
 
-# install docker
+## install docker
 ```
 sudo apt update
 
@@ -31,34 +31,16 @@ sudo apt install -y \
    containerd.io
 ```
 
-# Enable non-root docker (Chromebook)
+## Enable non-root docker (Chromebook)
 ```
 sudo usermod -aG docker $USER
 
 sudo chmod 666 /var/run/docker.sock
 ```
 
-# Pull Ubuntu image
-```
-docker pull ubuntu:latest
-```
+## Bash Guide
+[~/git/DevSecOps/bash/note.md](https://github.com/AlanACruz/DevSecOps/tree/master/bash/note.md)
 
-# Run Maven build from container
-```
-cd ~/git/DevSecOps
+## Powershell Guide
+[~/git/DevSecOps/ps1/note.md](https://github.com/AlanACruz/DevSecOps/tree/master/ps1/note.md)
 
-docker build --tag "bats-test" -f ~/git/DevSecOps/docker/bats.Dockerfile .
-
-docker run -i -t "bats-test"
-```
-
-# Run Bats tests locally
-```
-curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
-
-sudo apt-get install -y nodejs
-
-npm install -g bats
-   
-bats ~/git/DevSecOps/bash/test
-```
