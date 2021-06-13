@@ -1,0 +1,5 @@
+#!/bin/pwsh
+
+Install-Module Pester -Force;
+
+Invoke-Pester;
