@@ -1,8 +1,9 @@
 #!/bin/pwsh
 
-Set-Location /root/git/DevSecOps/ps1/test;
-
 Install-Module Pester -Force;
 
-Invoke-Pester -OutputFile /root/git/DevSecOps/ps1/test/Pester-Report.xml -OutputFormat NUnitXml;
+Set-Location /root/git/DevSecOps/ps1/test;
 
+New-Item -Path /root/git/DevSecOps/ps1/test/ -Name Pester-Report.xml -ItemType "file"
+
+Invoke-Pester -OutputFile /root/git/DevSecOps/ps1/test/Pester-Report.xml -OutputFormat NUnitXml;
