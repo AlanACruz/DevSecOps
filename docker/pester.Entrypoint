@@ -4,6 +4,4 @@ Install-Module Pester -Force;
 
 Set-Location /root/git/DevSecOps/ps1/test;
 
-New-Item -Path /root/git/DevSecOps/ps1/test/ -Name Pester-Report.xml -ItemType "file"
-
-Invoke-Pester -OutputFile /root/git/DevSecOps/ps1/test/Pester-Report.xml -OutputFormat NUnitXml;
+Invoke-Pester -CI;
