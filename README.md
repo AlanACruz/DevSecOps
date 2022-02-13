@@ -2,7 +2,7 @@
 
 # git clone
 ```
-git clone git@github.com:AlanACruz/DevSecOps.git ~/git/
+git clone git@github.com:AlanACruz/DevSecOps.git ~/git/DevSecOps
 ```
 
 # install docker
