@@ -43,7 +43,7 @@ sudo chmod 666 /var/run/docker.sock
 docker pull ubuntu:latest
 ```
 
-# Run Maven build from container
+# Run Bats test from container
 ```
 cd ~/git/DevSecOps
 
