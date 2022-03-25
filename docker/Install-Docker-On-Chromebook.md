@@ -1,4 +1,4 @@
-# install docker
+# Install docker
 ```
 sudo apt update
 
