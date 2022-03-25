@@ -1,3 +1,3 @@
-terraform plan 
+terraform plan
 terraform apply
 terraform destroy
