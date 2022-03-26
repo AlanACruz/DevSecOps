@@ -1,12 +1,14 @@
 #!/bin/bash
 
 # pull everything under the ~/git folder
-pushd ~/git; 
+pushd ~/git  > /dev/null;
 
 for repo in $(ls); do 
-  pushd ${repo}
-  git pull
-  popd; 
+  echo "----- ${repo} ------";
+  pushd ~/git/${repo} > /dev/null;
+  git pull;
+  popd  > /dev/null; 
 done; 
 
-popd
+echo "----------------------------------------";
+popd  > /dev/null;
