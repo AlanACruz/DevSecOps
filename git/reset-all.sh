@@ -1,15 +1,19 @@
 #!/bin/bash
 
+# Status All first for Safety
 ~/git/DevSecOps/git/status-all.sh
 
-# status everything under the ~/git folder
-pushd ~/git > /dev/null;
-
+# Confirm
 read -r -p "Are you sure? [y/N] " response
 
+# Switch to the ~/git folder
+pushd ~/git > /dev/null;
+
+# Reset Loop
 if [[ "${response}" =~ ^([yY][eE][sS]|[yY])$ ]]
 then
-    for repo in $(ls); do 
+  for repo in $(ls); 
+  do 
     echo "--------------- ${repo} ----------------";
     pushd ~/git/${repo} > /dev/null;
     git reset --hard;
@@ -17,4 +21,5 @@ then
   done; 
 fi;
 
+# Switch folder back
 popd > /dev/null;

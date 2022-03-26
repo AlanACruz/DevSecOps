@@ -1,12 +1,16 @@
 #!/bin/bash
 
+# Create directory if it doesn't exist
 mkdir -p ~/git;
 
+# Switch to ~/git folder
 pushd ~/git > /dev/null;
 
+# Curl Git App for URLs and Pass to Git Clone via Xargs
 curl "https://api.github.com/users/AlanACruz/repos" |
   grep -e 'ssh_url*' |   
   cut -d \" -f 4 |
   xargs -L1 git clone;
 
-popd  > /dev/null;
+# Switch folder back
+popd > /dev/null;
