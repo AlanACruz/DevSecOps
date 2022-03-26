@@ -2,10 +2,10 @@
 
 mkdir -p ~/git;
 
-pushd ~/git  > /dev/null;
+pushd ~/git > /dev/null;
 
 curl "https://api.github.com/users/AlanACruz/repos" |
-  grep -e 'git_url*' |   
+  grep -e 'ssh_url*' |   
   cut -d \" -f 4 |
   xargs -L1 git clone;
 
