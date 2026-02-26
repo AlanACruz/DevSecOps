@@ -2,7 +2,7 @@
 
 ## git clone
 ```
-git clone git@github.com:AlanACruz/DevSecOps.git ~/git/
+git clone git@github.com:AlanACruz/DevSecOps.git ~/git/DevSecOps
 ```
 
 ## install docker
@@ -44,3 +44,22 @@ sudo chmod 666 /var/run/docker.sock
 ## Powershell Guide
 [~/git/DevSecOps/ps1/note.md](https://github.com/AlanACruz/DevSecOps/tree/master/ps1/note.md)
 
+# Run Bats test from container
+```
+cd ~/git/DevSecOps
+
+docker build --tag "bats-test" -f ~/git/DevSecOps/docker/bats.Dockerfile .
+
+docker run -i -t "bats-test"
+```
+
+# Run Bats tests locally
+```
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo bash -
+
+sudo apt-get install -y nodejs
+
+npm install -g bats
+   
+bats ~/git/DevSecOps/bash/test
+```

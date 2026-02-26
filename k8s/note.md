@@ -14,8 +14,10 @@ kubectl get services
 # Deleting resources
 kubectl delete pod,service baz foo
 
-
 # Interacting with running Pods 
 kubectl logs my-pod 
 
 kubectl attach my-pod -i
+
+# k9s Command Line Tool
+docker pull derailed/k9s
