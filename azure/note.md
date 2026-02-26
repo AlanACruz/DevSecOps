@@ -1,6 +1,6 @@
 # Azure
 
-# Azure Commands
+## Azure Commands
 ```
 az login
 ```
