@@ -13,4 +13,4 @@ export PATH=$PWD/bin:$PATH
 ```
 
 ## Running Istio in K8 with Helm
-See [DevSecOps/helm/istio/notes.md](https://github.com/AlanACruz/DevSecOps/tree/master/helm/istio/notes.md)
+See [DevSecOps/helm/istio/notes.md](https://github.com/AlanACruz/DevSecOps/blob/master/helm/istio/notes.md)
