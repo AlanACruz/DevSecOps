@@ -1,9 +1,9 @@
 # Docker
 
 ## Install Docker
-'''
+```
 sudo apt install docker.io
-'''
+```
 
 ## Build/Save
 ```
