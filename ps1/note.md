@@ -16,6 +16,7 @@ docker run -i -t "pester-test"
 
 ## Run Powershell Tests Locally
 > Not sure if these installs are is required on a windows machine <br>
+> <br>
 > Install-PackageProvider NuGet -Force <br>
 > Install-module -Name Pester -Force 
 
