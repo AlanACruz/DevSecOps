@@ -5,11 +5,11 @@
 docker pull mcr.microsoft.com/powershell:latest
 ```
 
-## Run PowerShell test from container
+## Run PowerShell Unit Test from container
 ```
 cd ~/git/DevSecOps
 
-docker build --tag "pester-test" -f ~/git/DevSecOps/docker/pester.Dockerfile .
+docker build --tag "pester-test" -f ~/git/DevSecOps/ps1/docker/pester.Dockerfile .
 
 docker run -i -t "pester-test"
 ```
