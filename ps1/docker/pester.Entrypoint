@@ -1,0 +1,7 @@
+#!/bin/pwsh
+
+Install-Module Pester -Force;
+
+Set-Location /root/git/DevSecOps/ps1/test;
+
+Invoke-Pester -CI;

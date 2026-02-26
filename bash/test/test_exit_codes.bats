@@ -3,7 +3,7 @@
 # Fail Test
 @test 'exit_code_failure()' {
 
-    # Given - misspelled help
+    # Given
     local expected=1;
     local test_param=100;
 

@@ -8,4 +8,4 @@ RUN apt-get update; \
 
 ADD . /root/git/DevSecOps
 
-ENTRYPOINT ["/root/git/DevSecOps/docker/bats.Entrypoint"]
+ENTRYPOINT ["/root/git/DevSecOps/bash/docker/bats.Entrypoint"]

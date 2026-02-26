@@ -13,3 +13,6 @@ sudo apt-get update
 
 sudo apt-get install helm
 ```
+
+## Running Istio in K8 with Helm
+See [DevSecOps/helm/istio/notes.md](https://github.com/AlanACruz/DevSecOps/tree/master/helm/istio/notes.md)
