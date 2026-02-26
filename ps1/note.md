@@ -20,8 +20,6 @@ docker run -i -t "pester-test"
 > Install-PackageProvider NuGet -Force <br>
 > Install-module -Name Pester -Force 
 
-```
-
 To Run, just Invoke-Pester
 ```
 Invoke-Pester
