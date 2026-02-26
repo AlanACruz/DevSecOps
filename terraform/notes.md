@@ -1,5 +1,8 @@
+# Terraform
+
+## Terraform Commands
 ```
-terraform plan
-terraform apply
-terraform destroy
+terraform plan ...
+terraform apply ...
+terraform destroy ...
 ```
