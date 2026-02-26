@@ -5,11 +5,11 @@
 docker pull ubuntu:latest
 ```
 
-## Run Bash test from container
+## Run Bash Unit Test from Container
 ```
 cd ~/git/DevSecOps
 
-docker build --tag "bats-test" -f ~/git/DevSecOps/docker/bats.Dockerfile .
+docker build --tag "bats-test" -f ~/git/DevSecOps/bash/docker/bats.Dockerfile .
 
 docker run -i -t "bats-test"
 ```
