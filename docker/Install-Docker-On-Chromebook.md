@@ -1,4 +1,6 @@
-# Install Docker (Chromebook)
+# Install Chromebook
+
+## Install Docker (Chromebook)
 ```
 sudo apt update
 
@@ -24,7 +26,7 @@ sudo apt install -y \
    containerd.io
 ```
 
-# Enable Non-Root Docker (Chromebook)
+## Enable Non-Root Docker (Chromebook)
 ```
 sudo usermod -aG docker $USER
 
