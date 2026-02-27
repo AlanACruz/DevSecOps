@@ -15,4 +15,7 @@ sudo apt-get install helm
 ```
 
 ## Running Istio in K8 with Helm
-See [DevSecOps/helm/istio/notes.md](https://github.com/AlanACruz/DevSecOps/blob/master/helm/istio/notes.md)
+See [DevSecOps/istio/helm/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/istio/helm/README.md)
+
+## Running Nginx with Isto Service Mesh with Helm
+See [DevSecOps/nginx/helm/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/nginx/helm/README.md)

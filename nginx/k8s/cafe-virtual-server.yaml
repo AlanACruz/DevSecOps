@@ -1,0 +1,35 @@
+apiVersion: k8s.nginx.org/v1
+kind: VirtualServer
+metadata:
+  name: cafe
+  namespace: nginx-ingress
+spec:
+  host: cafe.example.com
+  tls:
+    secret: cafe-secret
+  upstreams:
+  - name: tea
+    service: tea-svc
+    port: 80
+    use-cluster-ip: true
+  - name: coffee
+    service: coffee-svc
+    port: 80
+    use-cluster-ip: true
+  routes:
+  - path: /tea
+    action:
+      proxy:
+        upstream: tea
+        requestHeaders:
+          set:
+          - name: Host
+            value: tea-svc.nginx-ingress.svc.cluster.local
+  - path: /coffee
+    action:
+      proxy:
+        upstream: coffee
+        requestHeaders:
+          set:
+          - name: Host
+            value: coffee-svc.nginx-ingress.svc.cluster.local

@@ -19,7 +19,7 @@ helm pull istio/istiod -d ~/git/DevSecOps/helm/istio --untar
 ```
 
 ## Install Local Values
-Use local `values.yaml` to configure istio
+Use local `values.yaml` to configure istio, using non-local chart
 ```
 helm install istio-base istio/base -n istio-system --set defaultRevision=default --create-namespace -f ~/git/DevSecOps/helm/istio/base/values.yaml
 
