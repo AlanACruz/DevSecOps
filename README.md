@@ -11,6 +11,9 @@ See [DevSecOps/nginx/README.md](https://github.com/AlanACruz/DevSecOps/blob/mast
 ## Running Istio in K8 with Helm
 See [DevSecOps/istio/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/helm/README.md)
 
+## Helpful Git Scripts
+See [DevSecOps/git/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/git/README.md)
+
 ## Bash Unit Test Guide
 See [DevSecOps/bash/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/bash/README.md)
 
