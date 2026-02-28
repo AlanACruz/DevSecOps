@@ -1,0 +1,96 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: cafe-deploy-nginx-coffee
+  namespace: nginx-cafe
+  labels:
+        app: cafe-deploy-nginx-coffee
+
+spec:
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+      app: cafe-po-nginx-coffee
+
+  template:
+
+    metadata:
+      labels:
+        app: cafe-po-nginx-coffee
+
+    spec:
+      containers:
+      - name: hello-world-nginx-cafe-coffe
+        image: hello-world-nginx-cafe-coffe:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: cafe-deploy-nginx-hot-chocolate
+  namespace: nginx-cafe
+  labels:
+    app: cafe-deploy-nginx-hot-chocolate
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: cafe-po-nginx-hot-chocolate
+
+  template:
+
+    metadata:
+      labels:
+        app: cafe-po-nginx-hot-chocolate
+
+    spec:
+      containers:
+      - name: hello-world-nginx-cafe-hot-chocolate
+        image: hello-world-nginx-cafe-hot-chocolate:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: cafe-deploy-nginx-tea
+  namespace: nginx-cafe
+  labels:
+    app: cafe-deploy-nginx-tea
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: cafe-po-nginx-tea
+
+  template:
+
+    metadata:
+      labels:
+        app: cafe-po-nginx-tea
+
+    spec:
+      containers:
+      - name: hello-world-nginx-cafe-tea
+        image: hello-world-nginx-cafe-tea:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+
+---

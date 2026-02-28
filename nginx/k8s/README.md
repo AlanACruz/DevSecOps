@@ -1,24 +1,68 @@
 # Kubectl
 
-## Istio Ingress Namespace
+## Cafe
+
+### Cafe Namespace
 ```
-kubectl apply -f ~/git/DevSecOps/nginx/k8s/nginx-ingress-namespace.yaml
+kubectl apply \
+    -f ~/git/DevSecOps/nginx/k8s/cafe-ingress-namespace.yaml
 
-kubectl get namespaces -A --show-labels
+kubectl get namespaces \
+    -A \
+    --show-labels
 ```
 
-## Nginx Ingress Controller
+### Cafe Ingress
 ```
-kubectl label namespace nginx-ingress istio-injection=enabled
+kubectl apply \
+    -f ~/git/DevSecOps/nginx/k8s/cafe-ingress.yaml
 
-kubectl get namespaces -A --show-labels
+kubectl get namespaces \
+    -A \
+    --show-labels
+```
 
-kubectl apply -f ~/git/DevSecOps/nginx/k8s/nginx-plus-ingress.yaml 
+### Cafe Virtual Server
+```
+kubectl apply \
+    -f ~/git/DevSecOps/nginx/k8s/cafe-virtual-server.yaml
+
+kubectl get namespaces \
+    -A \
+    --show-labels
+```
+
+### Cafe Deploy Pods
+```
+kubectl apply \
+    -f ~/git/DevSecOps/nginx/k8s/cafe-virtual-server.yaml
+
+kubectl get namespaces \
+    -A \
+    --show-labels
 ```
 
 ## Nginx Service Mesh
-```
-kubectl apply -f ~/git/DevSecOps/nginx/k8s/cafe-virtual-server.yaml 
 
-kubectl get pods -A
+### Nginx Ingress Controller
+```
+kubectl label \
+    namespace nginx-ingress \
+    istio-injection=enabled
+
+kubectl get namespaces \
+    -A \
+    --show-labels
+
+kubectl apply \
+    -f ~/git/DevSecOps/nginx/k8s/nginx-plus-ingress.yaml 
+```
+
+### Nginx Service Mesh
+```
+kubectl apply \
+    -f ~/git/DevSecOps/nginx/k8s/cafe-virtual-server.yaml 
+
+kubectl get pods \
+    -A
 ```

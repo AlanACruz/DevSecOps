@@ -1,0 +1,73 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+
+metadata:
+  name: cafe-ingress
+  namespace: nginx-cafe
+  annotations:
+    # kubernetes.io/ingress.class: "traefik"
+
+spec:
+  # ingressClassName: nginx
+  ingressClassName: traefik
+
+  rules:
+
+  - host: cafe.local
+    http:
+      paths:
+
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: cafe-svc-coffee
+            port:
+              number: 60001
+
+      - path: /coffee
+        pathType: Prefix
+        backend:
+          service:
+            name: cafe-svc-coffee
+            port:
+              number: 60001
+      
+      - path: /hot-chocolate
+        pathType: Prefix
+        backend:
+          service:
+            name: cafe-svc-hot-chocolate
+            port:
+              number: 60002
+      
+      - path: /tea
+        pathType: Prefix
+        backend:
+          service:
+            name: cafe-svc-tea
+            port:
+              number: 60003
+
+# ---
+
+# apiVersion: discovery.k8s.io/v1
+# kind: EndpointSlice
+
+# metadata:
+#   name: cafe-endpoint-slice
+#   namespace: nginx-cafe
+#   labels:
+#     kubernetes.io/service-name: cafe-ingress
+
+# addressType: IPv4
+
+# ports:
+#   - port: 80
+#     name: ""
+    
+# endpoints:
+#   - addresses:
+#       - 10.10.0.1
+#     conditions:
+#       ready: true

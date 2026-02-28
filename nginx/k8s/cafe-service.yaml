@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Service
+
+metadata:
+
+  name: cafe-svc-coffee
+  namespace: nginx-cafe
+  labels:
+    # app.kubernetes.io/instance: nginx-ingress
+    # app.kubernetes.io/name: nginx-ingress
+
+
+spec:
+
+  selector:
+    # matchLabels:
+    app: cafe-po-nginx-coffee
+    # app.kubernetes.io/name: proxy
+
+  type: LoadBalancer
+
+  ports:
+    - name: http
+      protocol: TCP
+      port: 60001
+      targetPort: 80
+
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+
+  name: cafe-svc-hot-chocolate
+  namespace: nginx-cafe
+  labels:
+    # app.kubernetes.io/instance: nginx-ingress
+    # app.kubernetes.io/name: nginx-ingress
+
+spec:
+
+  selector:
+    # matchLabels:
+    app: cafe-po-nginx-hot-chocolate
+    # app.kubernetes.io/name: proxy
+  
+  type: LoadBalancer
+
+  ports:
+    - name: http
+      protocol: TCP
+      port: 60002
+      targetPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+
+  name: cafe-svc-tea
+  namespace: nginx-cafe
+  labels:
+    # app.kubernetes.io/instance: nginx-ingress
+    # app.kubernetes.io/name: nginx-ingress
+    # - "traefik.http.routers.my-router.rule=Host(`example.com`)"
+    # - "traefik.http.services.my-service.loadbalancer.server.port=80"
+
+spec:
+
+  selector:
+    # matchLabels:
+    app: cafe-po-nginx-tea
+    # app.kubernetes.io/name: proxy
+
+  type: LoadBalancer
+
+  ports:
+    - name: http
+      protocol: TCP
+      port: 60003
+      targetPort: 80
