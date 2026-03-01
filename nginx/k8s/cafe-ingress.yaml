@@ -21,7 +21,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: cafe-svc-coffee
+            name: cafe-svc-home
             port:
               number: 80
 

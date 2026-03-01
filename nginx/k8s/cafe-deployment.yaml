@@ -2,6 +2,39 @@ apiVersion: apps/v1
 kind: Deployment
 
 metadata:
+  name: cafe-deploy-nginx-home
+  namespace: nginx-cafe
+  labels:
+        app: cafe-deploy-nginx-home
+
+spec:
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+      app: cafe-po-nginx-home
+
+  template:
+
+    metadata:
+      labels:
+        app: cafe-po-nginx-home
+
+    spec:
+      containers:
+      - name: hello-world-nginx-cafe-home
+        image: hello-world-nginx-cafe-home:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
   name: cafe-deploy-nginx-coffee
   namespace: nginx-cafe
   labels:

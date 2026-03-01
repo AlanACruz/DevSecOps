@@ -3,6 +3,35 @@ kind: Service
 
 metadata:
 
+  name: cafe-svc-home
+  namespace: nginx-cafe
+  labels:
+    # app.kubernetes.io/instance: nginx-ingress
+    # app.kubernetes.io/name: nginx-ingress
+
+
+spec:
+
+  selector:
+    # matchLabels:
+    app: cafe-po-nginx-home
+    # app.kubernetes.io/name: proxy
+
+  # type: LoadBalancer
+
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+
+metadata:
+
   name: cafe-svc-coffee
   namespace: nginx-cafe
   labels:
@@ -24,7 +53,6 @@ spec:
       protocol: TCP
       port: 80
       targetPort: 80
-
 
 ---
 

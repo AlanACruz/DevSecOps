@@ -4,6 +4,11 @@
 
 ### Build
 ```
+cd ~/git/DevSecOps/nginx/docker/cafe-home/
+docker build \
+    -t hello-world-nginx-cafe-home \
+    .
+
 cd ~/git/DevSecOps/nginx/docker/cafe-coffee/
 docker build \
     -t hello-world-nginx-cafe-coffe \
@@ -21,24 +26,32 @@ docker build \
 ```
 
 ### Run
+> Don't use these commands if using K8s
 ```
 docker run \
-    -p 8081:80 \
+    -p 9091:80 \
+    -d \
+    hello-world-nginx-cafe-tea
+
+docker run \
+    -p 9092:80 \
     -d \
     hello-world-nginx-cafe-coffe
 
 docker run \
-    -p 8082:80 \
+    -p 9093:80 \
     -d \
     hello-world-nginx-cafe-hot-chocolate
 
 docker run \
-    -p 8083:80 \
+    -p 9094:80 \
     -d \
     hello-world-nginx-cafe-tea
 ```
 
 ### Test
-http://localhost:8081
-http://localhost:8082
-http://localhost:8083
+> Don't use these links if using K8s
+http://localhost:9091
+http://localhost:9092
+http://localhost:9093
+http://localhost:9094
