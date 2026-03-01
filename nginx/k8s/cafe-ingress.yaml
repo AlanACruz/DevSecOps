@@ -23,31 +23,43 @@ spec:
           service:
             name: cafe-svc-coffee
             port:
-              number: 60001
+              number: 80
 
-      - path: /coffee
+  - host: coffee.cafe.local
+    http:
+      paths:
+
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: cafe-svc-coffee
             port:
-              number: 60001
-      
-      - path: /hot-chocolate
+              number: 80
+
+  - host: hot-chocolate.cafe.local
+    http:
+      paths:
+
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: cafe-svc-hot-chocolate
             port:
-              number: 60002
-      
-      - path: /tea
+              number: 80
+  
+  - host: tea.cafe.local
+    http:
+      paths:
+
+      - path: /
         pathType: Prefix
         backend:
           service:
             name: cafe-svc-tea
             port:
-              number: 60003
+              number: 80
 
 # ---
 

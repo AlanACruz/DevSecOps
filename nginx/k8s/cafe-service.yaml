@@ -17,12 +17,12 @@ spec:
     app: cafe-po-nginx-coffee
     # app.kubernetes.io/name: proxy
 
-  type: LoadBalancer
+  # type: LoadBalancer
 
   ports:
     - name: http
       protocol: TCP
-      port: 60001
+      port: 80
       targetPort: 80
 
 
@@ -46,12 +46,12 @@ spec:
     app: cafe-po-nginx-hot-chocolate
     # app.kubernetes.io/name: proxy
   
-  type: LoadBalancer
+  # type: LoadBalancer
 
   ports:
     - name: http
       protocol: TCP
-      port: 60002
+      port: 80
       targetPort: 80
 
 ---
@@ -76,10 +76,10 @@ spec:
     app: cafe-po-nginx-tea
     # app.kubernetes.io/name: proxy
 
-  type: LoadBalancer
+  # type: LoadBalancer
 
   ports:
     - name: http
       protocol: TCP
-      port: 60003
+      port: 80
       targetPort: 80
