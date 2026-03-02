@@ -9,6 +9,15 @@ git clone git@github.com:AlanACruz/DevSecOps.git ~/git/DevSecOps
 ### Helpful Git Scripts
 See [DevSecOps/git/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/git/README.md)
 
+## Nginx Loadbalanced Microservice
+See [DevSecOps/nginx/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/nginx/README.md)
+
+### Containerization
+See [DevSecOps/nginx/docker/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/nginx/docker/README.md)
+
+### K8s 
+See [DevSecOps/nginx/k8s/README.md](https://github.com/AlanACruz/DevSecOps/blob/master/nginx/k8s/README.md)
+
 ## Helm
 
 ### Running Nginx in K8 with Helm
